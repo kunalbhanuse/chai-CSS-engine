@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai CSS Engine</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./src/chai.js" defer></script>
+    <script src="./src/demo.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="intro">
+        <div class="intro-copy">
+          <p class="eyebrow">Utility-first CSS, brewed in JavaScript</p>
+          <h1>Chai CSS Engine</h1>
+          <p>
+            Write tiny <code>chai-*</code> classes in your HTML. The library scans the DOM, parses each utility,
+            applies inline styles, and removes the utility classes after page load.
+          </p>
+        </div>
+
+        <div class="demo-card chai-bg-white chai-p-24 chai-rounded-xl chai-border chai-border-slate">
+          <div class="chai-flex chai-items-center chai-justify-between chai-gap-12">
+            <span class="chai-text-sm chai-text-slate chai-font-bold">Live parsed card</span>
+            <span class="dot chai-bg-green"></span>
+          </div>
+          <h2 class="chai-text-2xl chai-mt-16 chai-mb-8 chai-text-black">Styled by class names</h2>
+          <p class="chai-text-gray chai-leading-1.6 chai-mb-16">
+            This card started with <code>chai-p-24</code>, <code>chai-bg-white</code>, <code>chai-rounded-xl</code>,
+            and more. Open DevTools and the styles are inline.
+          </p>
+          <button id="add-sample" class="button" type="button">Add dynamic element</button>
+        </div>
+      </section>
+
+      <section class="utility-board">
+        <article class="panel">
+          <h2>Supported Utilities</h2>
+          <div class="utility-grid">
+            <div>
+              <h3>Spacing</h3>
+              <code>chai-p-12</code>
+              <code>chai-px-20</code>
+              <code>chai-mt-8</code>
+              <code>chai-gap-16</code>
+            </div>
+            <div>
+              <h3>Colors</h3>
+              <code>chai-bg-red</code>
+              <code>chai-bg-0f172a</code>
+              <code>chai-text-blue</code>
+              <code>chai-text-[rebeccapurple]</code>
+            </div>
+            <div>
+              <h3>Typography</h3>
+              <code>chai-text-center</code>
+              <code>chai-text-xl</code>
+              <code>chai-font-bold</code>
+              <code>chai-leading-1.6</code>
+            </div>
+            <div>
+              <h3>Layout</h3>
+              <code>chai-flex</code>
+              <code>chai-flex-col</code>
+              <code>chai-items-center</code>
+              <code>chai-justify-between</code>
+            </div>
+            <div>
+              <h3>Borders</h3>
+              <code>chai-border</code>
+              <code>chai-border-blue</code>
+              <code>chai-rounded-lg</code>
+              <code>chai-rounded-24</code>
+            </div>
+            <div>
+              <h3>Sizing</h3>
+              <code>chai-w-120</code>
+              <code>chai-h-48</code>
+              <code>chai-max-w-640</code>
+              <code>chai-min-h-180</code>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>DOM Scan Result</h2>
+          <p>
+            The button below injects new HTML that includes <code>chai-*</code> classes. A MutationObserver lets the
+            engine style new nodes after the initial page load too.
+          </p>
+          <div id="dynamic-zone" class="dynamic-zone"></div>
+        </article>
+      </section>
+
+      <section class="examples">
+        <div class="chai-flex chai-gap-16 chai-wrap">
+          <div class="swatch chai-bg-red chai-w-72 chai-h-72 chai-rounded-lg"></div>
+          <div class="swatch chai-bg-blue chai-w-72 chai-h-72 chai-rounded-lg"></div>
+          <div class="swatch chai-bg-10b981 chai-w-72 chai-h-72 chai-rounded-lg"></div>
+          <div class="swatch chai-bg-[linear-gradient(135deg,_#111827,_#8b5cf6)] chai-w-72 chai-h-72 chai-rounded-lg"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
